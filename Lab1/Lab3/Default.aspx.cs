@@ -14,11 +14,6 @@ namespace Lab3
             clientDetailsView.DataBind();
         }
 
-        protected void id_TB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void login_Button_Click(object sender, EventArgs e)
         {
             clientDetailsView.Visible = false;
@@ -27,14 +22,17 @@ namespace Lab3
             {
                 Session["name"] = clientDetailsView.Rows[0].Cells[1].Text;
                 Session["money"] = clientDetailsView.Rows[1].Cells[1].Text;
+                Session["phone"] = clientDetailsView.Rows[2].Cells[1].Text;
                 entry.Visible = true;
             }
             else
             {
                 Session["name"] = null;
                 Session["money"] = null;
+                Session["phone"] = null;
                 clientDetailsView.Visible = true;
             }
         }
+
     }
 }
